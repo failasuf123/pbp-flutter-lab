@@ -65,11 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
             _counter % 2 == 0
                 ? const Text(
                     'GENAP',
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.red),
                   )
                 : const Text(
                     'GANJIL',
-                    style: TextStyle(color: Colors.red),
+                    style: TextStyle(color: Colors.blue),
                   ),
             Text('$_counter', style: Theme.of(context).textTheme.headline4),
           ],
