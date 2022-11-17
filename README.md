@@ -1,35 +1,35 @@
-1. Perbedaan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
-   Stateless widget
-   Merupakan sebuah widget yang statis, artinya seluruh konfigurasi dan tampilan telah dibentuk sejak  awal Widget jenis ini tidak dapat dirubah dan dibuat agar tidak pernah berubah. Stateless widget dapat    diinisiasikan pada sebuah class dengan menuliskan class NameClass extends StatelessWidget {}
-   
-   Statefull widget
-   Merupakan sebuah widget yang dinamis, artinya widget dapat berubah / diperbaharui berdasarkan user          actions atau ketika terjadi perubahan data. Stateful widget dapat diinisiasikan pada sebuah class dengan    menuliskan class NameClass extends StatefulWidget {}
-   
-2. Widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
-  - Widget Coloumn
-    Mengurutkan dan menata children widget untuk mengisi ruang vertikal
-  - WidgetScaffold
-    Memberikan tema material yang akan menjadi dasar dari tampilan
-  - Widget Stack
-    Dapat memungkinkan untuk menempatkan widget satu sama lain
-    
-3. Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
-   Memberitahu framework bahwa terdapat suatu object yang berbah pada sate yang kemudian dilakukan build     ulang pada widget tersebut, variaberl int, boolean
+1. Perbedaan Navigator push dan Navigator.pushReplacement
+   Navigator.push akan melakukan perpindahan halaman dan dapat kembali ke halaman sebelumnya, sedangakan        Navigator.pusReplacement tidak dapat kembali ke halaman sebelumnya
 
-4. Jelaskan perbedaan antara const dengan final.
-   Final
-   - variabel final dapat di inialisasi pada saat runtime dan hanya dapat di tuliskan untuk satu waktu
-   - Dapat menginisiasi final di class maupun fungsi
-   - Ketika state diupdate semuanya yang dibuat akan diinisiasi lagi termasukuk seluru variabel final
-   
-   Const
-   - variabel const di inisialisasi pada saat compile-time dan telah di tetapkan pada saat runtime
-   - dapat di inisialisasi di fungsi tapi tidak bisa pada class
-   - tidak berubah ketika runtime
-   
-5. Pertama saya menggunakan default code dari flutter karena programnya mirip dengan tugas kali ini, tapi saya mengganti judul menjadi 'Program counter', kemudian untuk membuat tombol decrement saya membuat function _decrementCounter() di dalamnya saya membuat conditional satetement apabila variabel counter bernilai 0, maaka fungsi ini ketika di click akan tetap membuat variabel _counter tetap bernilai 0, dan conditional yang kedua apa bila counter tidak 0, maka tombol decrement akan mengurangi _count
+2. Widget yang ditambahkan dan fungsinya
+   - Drawer
+      Membuat Navigasi
+   - ListView
+      Menampilkan data dari list
+   - ListTile
+      Menampilkan leading, tittle dan hal lainya dengan mudah pada childer
+   - Form
+      Membukus form field
+   - DropdownButton
+      Widget untuk memimilih suatu nilai unik dari sekumpulan nilai
+      
+ 
 
-Saya mengimplementasikan kedua fungsi tersebut didalam floationActionButton dengan widget stack yang berisi tombol increment yang memanggil fungsi incrementCounter, dan tombol decrement yang memanggil decrementCounter. Saya merapikan tombol tersebut dengan menyesuaikan paddingnnya
+3. Jenis-jenis event pada flutter
+   - onHover
+   - onChanged
+   - onFocusChanged
+   - oSaved
+   - onPressed
+  
 
-Saya ingin agar terdapat kata genap juka counter genap dan kata ganjil jika counter bernila ganjil, saya melakukan operasi kondisional kembali pada widget coloum dimana apabila bernilai genap (modulo 2 === 0) maka kata akan berubah menjadi genap dan warnanya merah, jika tidak kata berubah menjadi ganjil dan warana kata menjadi biru, dibawahnya sata menginisasi counter yang sedang berlangsung
-   
+4. Cara kerja navigator
+   Cara kerja naviator serupa dengan stack, dimana kita dapat nelakukan push dan pop, push akan mengarahkan    user ke halaman tertentu serta menambahkan suatu halaman di antrian atas, sedangkan pop akan                mengembalikan ke halaman serta mengurangi halaman dari stack
+
+5. Cara Implementasi Checklist
+- Dari program tugas sebelumnya, saya menambahkan 3 file yaitu form.dart untuk mengisi form, dataBudget.dart menampilkan data, dan models.dart untuk membuat database
+- Membuat Navigator, karena program ini terdiri dari tiga halaman, maka saya membuat navigator pada humberger menu dengan mengimplementasikan Drawer serta agar merapikan navigasi menggunakan listTile dan mengarahkan ke laman yang diinginkan. Navigator dibuat di 3 file yaitu main.dart, dataBUdeget.dart dan form.dart
+- Pada form.dart sayang mengimplementasikan Widget form yang terdiri dari 3 input data , dua merupakan bentuk textform field dan satu lagi merupakan dropdown, data yang diinput user kemudian di submit untuk diteruskan ke models.py
+- Pada models.py saya membuat sebuah class DataBudget yang terdiri dari judul, nominal, dan jenis, dan saya menyimpan data-data tersebut ke dalam list elem
+- dataBudget.dart pada laman ini saya menampilkan data dari models.py menggunakan lisview yang akan menampilakan data secara vertikal didalamnya terdapat judul, nominal , dan jenis (pemasukan/pengeluaran)
+
