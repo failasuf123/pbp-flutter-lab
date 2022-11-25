@@ -1,8 +1,9 @@
 import 'package:flutter/services.dart';
 import 'package:tugas/main.dart';
 import 'package:flutter/material.dart';
-import 'package:tugas/models.dart' as model;
-import 'package:tugas/dataBudget.dart';
+import 'package:tugas/model/models.dart' as model;
+import 'package:tugas/file/dataBudget.dart';
+import 'package:tugas/file/mywatchlist.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -61,6 +62,17 @@ class _MyFormPageState extends State<MyFormPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyDataBudget()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('My Watch List'),
+              onTap: () {
+                // Route menu ke halaman form
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MyWatchListView()),
                 );
               },
             ),

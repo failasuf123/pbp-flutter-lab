@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tugas/form.dart';
-import 'package:tugas/dataBudget.dart';
+import 'package:tugas/file/form.dart';
+import 'package:tugas/file/dataBudget.dart';
+import 'package:tugas/file/mywatchlist.dart';
 
 void main() {
   runApp(const MyApp());
@@ -90,6 +91,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyDataBudget()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('My Watch List'),
+              onTap: () {
+                // Route menu ke halaman form
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MyWatchListView()),
                 );
               },
             ),
